@@ -2,9 +2,18 @@
 
 #Indica a espera da entrada do usuario
 function signal() {
-  printf "\n-> "
+    printf "\n-> "
 }
 
+function titulo() {
+    echo " ██████╗ ███╗   ███╗███╗   ███╗"
+    echo "██╔════╝ ████╗ ████║████╗ ████║"
+    echo "██║  ███╗██╔████╔██║██╔████╔██║"
+    echo "██║   ██║██║╚██╔╝██║██║╚██╔╝██║"
+    echo "╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║"
+    echo " ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝"
+    printf "\t\tVersão 2.0\n\n"
+}
 #Função onde se desenvolve o menu de Audio
 function audioMenu() {
     clear
@@ -35,8 +44,7 @@ function videoMenu() {
 #Função onde se desenvolve o Menu Principal
 function menu() {
     clear
-    echo "|GMM| (Get My Media)"
-    printf "V.2.0\n\n"
+    titulo
 
     echo "1.Audio"
     echo "2.Video"
