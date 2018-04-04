@@ -1,31 +1,57 @@
 #!/bin/bash
 
 #Indica a espera da entrada do usuario
-function signal {
+function signal() {
   printf "\n-> "
 }
 
-#Função principal
-function main {
-  clear
-  echo "Digite a url da música no YouTube que deseja baixar."
-  signal
-  read url
+#Função onde se desenvolve o menu de Audio
+function audioMenu() {
+    clear
+    echo "Digite a url da música no YouTube que deseja baixar."
+    signal
+    read url
+    
+    youtube-dl --extract-audio --audio-format mp3 "$url"
+    
+    printf "\nDeseja continuar? [S/n]"
+    signal
+    read cont    
+
+    while [[ $cont == 's' || $cont == 'S' ]]; do
+        audioMenu    
+    done
+    
+    if [[ "$cont" == 'n' || $cont == 'N' ]]; then
+        menu
+    fi
 }
 
-#Função que captura se o usuario quer continuar baixando ou nao
-function check {
-  printf "\nContinuar? [S/n]\n"
-  signal
-  read R
+#Função onde se desenvolve o menu de Video
+function videoMenu() {
+    echo "Em dev..."
 }
 
-main
-youtube-dl --extract-audio --audio-format mp3 "$url"
-check
+#Função onde se desenvolve o Menu Principal
+function menu() {
+    clear
+    echo "|GMM| (Get My Media)"
+    printf "V.2.0\n\n"
 
-while [[ $R == 'S' || $R == 's' ]]; do
-  main
-  youtube-dl --extract-audio --audio-format mp3 "$url"
-  check
-done
+    echo "1.Audio"
+    echo "2.Video"
+    echo "0.Sair"
+    
+    signal
+    read resposta
+    
+    if [[ "$resposta" == 1 ]]; then
+        audioMenu
+    else
+        if [[ "$resposta" == 2 ]]; then
+            videoMenu
+        fi
+    fi
+}
+
+menu
