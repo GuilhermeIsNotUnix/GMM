@@ -12,12 +12,12 @@ function titulo() {
     echo "██║   ██║██║╚██╔╝██║██║╚██╔╝██║"
     echo "╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║"
     echo " ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝"
-    printf "\t\tVersão 2.0\n\n"
+    printf "\t\tVersão 2.1\n\n"
 }
 #Função onde se desenvolve o menu de Audio
 function audioMenu() {
     clear
-    echo "Digite a url da música no YouTube que deseja baixar."
+    echo "Digite a URL da música no YouTube que deseja baixar"
     signal
     read url
     
@@ -38,7 +38,24 @@ function audioMenu() {
 
 #Função onde se desenvolve o menu de Video
 function videoMenu() {
-    echo "Em dev..."
+    clear
+    echo "Digite a URL do video do YouTube que deseja baixar"
+    signal
+    read url
+    
+    youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' "$url"
+    
+    printf "\nDeseja continuar? [S/n]"
+    signal
+    read cont
+    
+    while [[ $cont == 's' || $cont == 'S' ]]; do
+        videoMenu
+    done
+
+    if [[ "$cont" == 'n' || $cont == 'N' ]]; then
+        menu
+    fi
 }
 
 #Função onde se desenvolve o Menu Principal
