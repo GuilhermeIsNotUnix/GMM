@@ -12,8 +12,9 @@ function titulo() {
     echo "██║   ██║██║╚██╔╝██║██║╚██╔╝██║"
     echo "╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║"
     echo " ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝"
-    printf "\t\tVersão 2.1\n\n"
+    printf "\t\tVersão 2.3\n\n"
 }
+
 #Função onde se desenvolve o menu de Audio
 function audioMenu() {
     clear
@@ -58,8 +59,36 @@ function videoMenu() {
     fi
 }
 
+function checaYouTubeDL() {
+    i=1
+
+    clear
+    printf "Checando YouTube-DL"
+    while [[ $i < 4 ]]; do
+        sleep 1
+        printf "."
+        i=$(( $i + 1 ))
+    done
+    echo
+
+    if which youtube-dl >/dev/null; then
+        printf "YouTube-DL"
+        sleep 1
+        printf " [OK]"
+        sleep 1
+    else
+        printf "YouTube-DL"
+        sleep 1
+        printf " [FALHOU]\n"
+        echo "ERRO: YouTube-DL não esta instalado"
+        sleep 3
+        exit
+    fi
+}
+
 #Função onde se desenvolve o Menu Principal
 function menu() {
+    checaYouTubeDL
     clear
     titulo
 
