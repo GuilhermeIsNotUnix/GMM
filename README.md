@@ -6,6 +6,12 @@ GMM (Get My Media) é um Front End do "youtube-dl" feito em BASH que automatiza 
 ## Instalação
 
 Antes de usar, certifique-se de ter instalado o programa chamado "youtube-dl", que provavelmente deve existir na maioria das distribuições GNU/Linux e no MacOS.
+ 
+Na inicialização do GMM, o GMM irá tentar detectar se você possui ou não o "youtube-dl" instalado.
+
+![Screenshot](YT-DLCheck.png)
+
+Caso não tenha instalado, siga as instruçoes do topico abaixo para sua instalação de acordo com a sua distribuição.
 
 ### Ubuntu/Mint/ElementaryOS
 
