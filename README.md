@@ -43,7 +43,7 @@ O resto será bem intuitivo na verdade... Só ter uma URL copiada (Testado com o
 
 ## Motivação
 
-Escrevi esse projeto de Front End porque era massivo e cansativo ter que ficar escrevendo o comando do youtube-dl inteiro para cada tipo de arquivo que queria, agora fica bem mais facil, posso ficar baixando toda hora só indicando as URLs, o script faz o resto xD
+Era muito massivo e cansativo escrever o comando do youtube-dl inteiro para cada tipo de arquivo que queria. E as vezes acontecia de esquecer o comando e perder tempo procurando de novo pela Web. Então para resolver este problema, criei essa interface com comandos que eu ja uso, assim eu não preciso mais pensar em como fazer, eu só preciso de URLs. 
 
 # Bugs
 Se bugs forem encontrados, agradeço se reportar diretamente para mim. ^.~
