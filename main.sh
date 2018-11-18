@@ -76,6 +76,7 @@ function checaYouTubeDL() {
         sleep 1
         printf " [OK]"
         sleep 1
+        menu
     else
         printf "YouTube-DL"
         sleep 1
@@ -88,13 +89,12 @@ function checaYouTubeDL() {
 
 #Função onde se desenvolve o Menu Principal
 function menu() {
-    checaYouTubeDL
     clear
     titulo
 
     echo "1.Audio"
     echo "2.Video"
-    echo "0.Sair"
+    echo "CTRL + C para sair"
     
     signal
     read resposta
@@ -108,4 +108,4 @@ function menu() {
     fi
 }
 
-menu
+checaYouTubeDL
